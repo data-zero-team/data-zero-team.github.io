@@ -115,6 +115,21 @@
     <script src="./js/jquery-2.1.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/repute-scripts.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('ul.navbar-right a').click(function(event) {
+            event.preventDefault();
+            $('body,html').animate({
+                scrollTop: $('#' + $(this).attr('name')).offset().top - 60
+            }, 600);
+        });
+        $('img').click(function(){
+            if($(this).attr('id') != "grafanaImg"){
+                window.open($(this).attr("src"),"toolbar=no,scrollbars=no,menubar=no");
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>
